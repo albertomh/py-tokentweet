@@ -21,7 +21,7 @@ import json
 import re
 
 ###    LOAD CORPUS FROM JSON FILE.
-corpus_json = open('corpus50k_Trump.json', 'r')
+corpus_json = open('corpus50k.json', 'r')
 corpus = corpus_json.read()
 
 ###    POPULATE THE LIST l_corpus BY EVALUATING THE STRING corpus.
@@ -52,7 +52,7 @@ for twt in n:
     d_tw[twt]['text'] = d_tw[twt]['text'].lower() # MAKE ALL TEXT LOWERCASE.
 
 ###    REMOVE STOPWORDS:
-    d_tw[twt]['text'] = re.sub(ur" the | donald | trump | i | im | am | of | at | is | in | to | a | for | on | about | that | this | there | be | it | its | with | by | and | you | youre | your | yours | mine | he | hes | his | him | she | shes | her | hers | they | their | theirs | theyre | pm | est | cet ", " ", d_tw[twt]['text'])
+    d_tw[twt]['text'] = re.sub(ur" the | i | im | am | of | at | is | in | to | a | for | on | about | that | this | there | be | it | its | with | by | and | you | youre | your | yours | mine | he | hes | his | him | she | shes | her | hers | they | their | theirs | theyre | pm | est | cet ", " ", d_tw[twt]['text'])
     d_tw[twt]['text'] = re.sub(ur" +", " ", d_tw[twt]['text']) #ENSURE THERE IS ONLY A SINGLE SPACE BETWEEN WORDS.
 
 for twt in n:
@@ -66,7 +66,7 @@ for twt in n:
 
 
 ###    DEFINE PATH OF OUTPUT FILE AND WRITE TO FILE.
-path_out = 'output50k_Trump.json'
+path_out = 'output50k.json'
 
 with open(path_out, 'w') as outfile:
     json.dump(l_out, outfile)
