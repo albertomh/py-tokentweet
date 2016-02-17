@@ -108,19 +108,6 @@ def relFreq():
 
 
 
-###    THE FUNCTION lexDiver COMPUTES A RATIO OF THE UNIQUE WORDS IN THE CORPUS
-###    DIVIDED BY THE TOTAL NUMBER OF WORDS IN THE CORPUS.
-def lexDiver():
-    
-    lex_diver = float(len(unique_lex)) / float(len(l_lex))
-    
-###    OUTPUT TO THE USER.    
-    print "The lexical diversity of the corpus is:", round(lex_diver, 3)
-###    // // // // // // // // // // // // // // //
-
-
-
-
 ###    THE FUNCTION topFreq(n) COMPUTES AND PRINTS THE n MOST FREQUENT WORDS
 ###    IN THE CORPUS. n MUST BE SPECIFIED BY THE USER.
 def topFreq(n):
